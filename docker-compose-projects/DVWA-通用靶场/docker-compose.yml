@@ -1,0 +1,6 @@
+version: '2'
+services:
+ web:
+   image: vulnerables/web-dvwa
+   ports:
+    - "8116:80"

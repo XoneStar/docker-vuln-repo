@@ -1,0 +1,6 @@
+version: '2'
+services:
+ struts2:
+   build: .
+   ports:
+    - "8088:8080"

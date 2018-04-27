@@ -1,0 +1,11 @@
+version: '2'
+services:
+ apache:
+   image: php:apache
+   volumes:
+    - ./www:/var/www/html
+    - ./conf/docker-php.conf:/etc/apache2/conf-enabled/docker-php.conf
+    - ./start.sh:/var/www/start.sh
+   command: /bin/sh /var/www/start.sh
+   ports:
+    - "86:80"

@@ -1,0 +1,10 @@
+{
+  "globals": {
+    "angular": false,
+    "alertify": false,
+    "_": false,
+    "markdown": false,
+    "$": false
+  },
+  "globalstrict": true
+}

@@ -1,0 +1,7 @@
+version: '2'
+services:
+ web:
+   image: webgoat/webgoat-8.0
+   command: "sh /home/webgoat/start.sh"
+   ports:
+    - "8222:8080"

@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>集成靶场环境</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+
+    <script src="bower_components/alertify-js/build/alertify.js"></script>
+    <link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.css"/>
+    <link rel="stylesheet" href="bower_components/alertify-js/build/css/themes/bootstrap.css"/>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/colors.css">
+</head>
+<body ng-app="composeUiApp">
+
+<header class="text-center">
+    <img class="img-responsive margin-auto" src="images/logo.png" alt="集成靶场环境">
+</header>
+
+<div class="container" ng-controller="MainCtrl">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h3>环境列表</h3>
+            <div class="vertical-margin" ng-hide="isEmpty(projects.projects)">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="project-filter">筛选:</label>
+                        <input name="project-filter" type="text" ng-model="query" ng-change="page = 0"
+                               class="query form-control">
+                        <button ng-click="active = !active; page = 0" class="btn btn-default"
+                                ng-class="{active: active}">只显示运行的
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="btn-group-vertical projects">
+                <a ng-repeat="(id, path) in projects.projects | filterByName:query | filterByActive:active:projects.active | filterByPage: page"
+                   class="btn btn-default btn-block truncate" ng-class="{active: activeProject === id}"
+                   ng-click="$parent.activeProject = id" ng-href="#/project/{{ id }}">
+                    <img height="32" width="32" ng-src="./api/v1/projects/logo/{{ id }}" fallback-icon/>
+                    {{ id || path }}
+                    <span class="label label-success" ng-show="isActive(id, projects.active)">ON</span>
+                </a>
+                <div class="btn-group btn-group-justified" role="group">
+                    <div class="btn-group" ng-hide="page === 0" role="group">
+                        <button ng-click="page = page - 1" class="btn btn-link"><strong><span
+                                class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 上一页</strong>
+                        </button>
+                    </div>
+                    <div class="btn-group" role="group"
+                         ng-show="(page + 1) * pageSize < size(projects.projects | filterByName:query | filterByActive:active:projects.active )">
+                        <button ng-click="page = page + 1" class="btn btn-link"><strong>下一页 <span
+                                class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></strong></button>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="isEmpty(projects.projects)" class="vertical-margin alert alert-danger">
+                暂时没有漏洞环境，可以手动创建。
+            </div>
+            <br>
+            <br>
+            <button class="btn btn-default btn-block" ng-click="reload(true)"><i
+                    class="glyphicon glyphicon-refresh"></i> 重新加载列表
+            </button>
+            <a class="btn btn-default btn-block" ng-href="#/create"><i class="glyphicon glyphicon-plus"></i> 新建漏洞环境
+            </a>
+            <a class="btn btn-primary btn-block" ng-href="#/"><i class="glyphicon glyphicon-wrench"></i> 设置</a>
+        </div>
+        <div class="col-md-8">
+            <div ng-view=""></div>
+        </div>
+
+    </div>
+
+    <footer class="text-center">
+
+    </footer>
+</div>
+
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/markdown/lib/markdown.js"></script>
+<script src="scripts/alertify-js.config.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/filters/filters.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/project.js"></script>
+<script src="scripts/controllers/container.js"></script>
+<script src="scripts/controllers/create.js"></script>
+<script src="scripts/directives/actions.js"></script>
+<script src="scripts/directives/project-detail.js"></script>
+<script src="scripts/directives/modal.js"></script>
+<script src="scripts/directives/console-modal.js"></script>
+<script src="scripts/services/project.js"></script>
+<script src="scripts/services/logs.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

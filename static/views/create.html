@@ -1,0 +1,66 @@
+<h3>Create new project</h3>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+        <div class="panel panel-default" ng-show="composeRegistry">
+            <div class="panel-heading">模板创建环境</div>
+            <div class="panel-body">
+                <form class="form-inline" ng-submit="search(query)">
+                    <div class="form-group">
+                        <input type="text" ng-model="query" class="form-control" id="query"
+                               placeholder="search for an application stack" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">搜索</button>
+
+
+                    <ul class="list-unstyled search-items">
+                        <li ng-repeat="item in items">
+                            <button class="btn btn-link" ng-click="load(item.name, item.id)">{{ item.name }} <span
+                                    ng-hide="composeRegistry"> by {{ item.owner }}</span></button>
+                            {{ item.stars }} <i ng-hide="composeRegistry" class="glyphicon glyphicon-star"></i>
+                            <a ng-hide="composeRegistry" ng-href="{{ composeRegistry }}/details?id={{ item.id }}"
+                               target="_blank" class="btn btn-xs btn-info">信息</a>
+                        </li>
+                    </ul>
+
+                    <strong ng-hide="items.length">没有数据</strong>
+
+                </form>
+
+                search provided by <a ng-href="{{ composeRegistry }}">{{ composeRegistry }}</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">环境详情</div>
+            <div class="panel-body project-wizard">
+                <form class="form-horizontal" ng-submit="createProject(name, yml, env)">
+                    <div class="form-group">
+                        <label for="projectName">名称</label>
+                        <input type="text" ng-model="name" class="form-control" id="projectName"
+                               placeholder="Project Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="yml">YML配置内容</label>
+
+                        <textarea class="form-control" ng-model="yml" id="yml" rows="20" required></textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="yml">环境变量</label>
+
+                        <textarea class="form-control" ng-model="env" id="env" rows="20"></textarea>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">新建环境</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

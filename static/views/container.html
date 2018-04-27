@@ -1,0 +1,69 @@
+<h3>{{ project }} / {{ container.name_without_project }}</h3>
+
+<div class="table-responsive">
+    <table class="table text-left">
+        <thead>
+        <tr>
+            <th>名称</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>容器名</td>
+            <td>{{ container.name }}</td>
+        </tr>
+        <tr>
+            <td>镜像</td>
+            <td>{{ container.repo_tags.join(',') }}</td>
+        </tr>
+        <tr>
+            <td>ip</td>
+            <td>{{ container.ip }}</td>
+        </tr>
+        <tr>
+            <td>容器数量</td>
+            <td>{{ container.number }}</td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>{{ container.short_id }}</td>
+        </tr>
+        <tr>
+            <td>日志配置</td>
+            <td>{{ container.log_config.Type }}</td>
+        </tr>
+        <tr>
+            <td>启动时间</td>
+            <td>{{ container.started_at | date:'medium'}}</td>
+        </tr>
+        <tr>
+            <td>命令</td>
+            <td>{{ container.human_readable_command }}</td>
+        </tr>
+        <tr>
+            <td>环境</td>
+            <td>
+                <ul>
+                    <li ng-repeat="(k, v) in container.environment">
+                        {{ k }} = {{ v }}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>标签</td>
+            <td>
+                <ul>
+                    <li ng-repeat="(k, v) in container.labels">
+                        {{ k }} = {{ v }}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<a ng-href="#/project/{{ project }}" class="btn btn-block btn-primary">返回 {{ project }}</a>
+

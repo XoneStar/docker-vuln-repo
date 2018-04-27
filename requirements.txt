@@ -1,0 +1,5 @@
+docker
+requests
+Flask==0.12
+docker-compose==1.18.0
+gitpython==2.1.3

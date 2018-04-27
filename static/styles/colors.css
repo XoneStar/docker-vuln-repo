@@ -1,0 +1,128 @@
+.service-0 .active.panel {
+  border-color: #f44336;
+  color: #f44336;
+}
+.service-0 .active.panel > .panel-heading {
+  background-color: #fff8f7;
+  border-color: #f44336;
+}
+.service-1 .active.panel {
+  border-color: #ff5722;
+  color: #ff5722;
+}
+.service-1 .active.panel > .panel-heading {
+  background-color: #fff2ee;
+  border-color: #ff5722;
+}
+.service-2 .active.panel {
+  border-color: #ff9800;
+  color: #ff9800;
+}
+.service-2 .active.panel > .panel-heading {
+  background-color: #ffeacc;
+  border-color: #ff9800;
+}
+.service-3 .active.panel {
+  border-color: #ffc107;
+  color: #ffc107;
+}
+.service-3 .active.panel > .panel-heading {
+  background-color: #fff4d3;
+  border-color: #ffc107;
+}
+.service-4 .active.panel {
+  border-color: #adaf39;
+  color: #adaf39;
+}
+.service-4 .active.panel > .panel-heading {
+  background-color: #ecedc7;
+  border-color: #adaf39;
+}
+.service-5 .active.panel {
+  border-color: #8bc34a;
+  color: #8bc34a;
+}
+.service-5 .active.panel > .panel-heading {
+  background-color: #edf6e3;
+  border-color: #8bc34a;
+}
+.service-6 .active.panel {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+.service-6 .active.panel > .panel-heading {
+  background-color: #d9eeda;
+  border-color: #4caf50;
+}
+.service-7 .active.panel {
+  border-color: #009688;
+  color: #009688;
+}
+.service-7 .active.panel > .panel-heading {
+  background-color: #63fff0;
+  border-color: #009688;
+}
+.service-8 .active.panel {
+  border-color: #00bcd4;
+  color: #00bcd4;
+}
+.service-8 .active.panel > .panel-heading {
+  background-color: #a1f4ff;
+  border-color: #00bcd4;
+}
+.service-9 .active.panel {
+  border-color: #03a9f4;
+  color: #03a9f4;
+}
+.service-9 .active.panel > .panel-heading {
+  background-color: #c5ecfe;
+  border-color: #03a9f4;
+}
+.service-10 .active.panel {
+  border-color: #2196F3;
+  color: #2196F3;
+}
+.service-10 .active.panel > .panel-heading {
+  background-color: #e3f2fd;
+  border-color: #2196F3;
+}
+.service-11 .active.panel {
+  border-color: #3f51b5;
+  color: #3f51b5;
+}
+.service-11 .active.panel > .panel-heading {
+  background-color: #d1d6ef;
+  border-color: #3f51b5;
+}
+.service-12 .active.panel {
+  border-color: #673ab7;
+  color: #673ab7;
+}
+.service-12 .active.panel > .panel-heading {
+  background-color: #daceef;
+  border-color: #673ab7;
+}
+.service-13 .active.panel {
+  border-color: #9c27b0;
+  color: #9c27b0;
+}
+.service-13 .active.panel > .panel-heading {
+  background-color: #e6b5ee;
+  border-color: #9c27b0;
+}
+.service-14 .active.panel {
+  border-color: #E91E63;
+  color: #E91E63;
+}
+.service-14 .active.panel > .panel-heading {
+  background-color: #fbd8e4;
+  border-color: #E91E63;
+}
+.service-15 .active.panel {
+  border-color: #F91E33;
+  color: #F91E33;
+}
+.service-15 .active.panel > .panel-heading {
+  background-color: #fee5e7;
+  border-color: #F91E33;
+}
