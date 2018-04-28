@@ -24,3 +24,7 @@ https://github.com/vulhub/vulhub
 + Spring messaging Spel 代码执行漏洞(CVE-2018-1270)
 + 更新说明文档
 
+### 使用
+```
+docker pull creatorx/docker-vuln-repo-weekly
+```
