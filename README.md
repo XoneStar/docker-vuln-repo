@@ -1,3 +1,5 @@
+
+
 # Docker 集成靶场环境(Web版)
 
 #### 基于docker-compose-ui + vulhub
@@ -9,7 +11,7 @@ https://github.com/vulhub/vulhub
 
 ```
 靶场环境文件更新说明：
-1. 创建漏洞名称文件，如“Apache解析漏洞”
+1. 创建漏洞名称目录，如“Apache解析漏洞”
 2. 编写漏洞环境的dockerfile文件
 3. 编写漏洞环境所需的容器配置文件docker-compose.yml
 4. 编写漏洞的简要原理和利用过程
